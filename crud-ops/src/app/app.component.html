@@ -17,5 +17,7 @@ Customer Amount:-<input [(ngModel)]="CustomerModel.CustomerAmount" type="text"><
     <td>{{cust.CustomerCode}}</td>
     <td>{{cust.CustomerName}}</td>
     <td>{{cust.CustomerAmount}}</td>
+    <td><button (click)=EditCusomer(cust)>Edit</button></td>
+    <td><button>Delete</button></td>
   </tr>
 </table>

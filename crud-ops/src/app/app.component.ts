@@ -12,10 +12,19 @@ export class AppComponent {
   CustomerModels:Array<Customer>=new Array<Customer>();
   AddCustomer(){
     //console.log(this.CustomerModel);
-    this.CustomerModels.push(this.CustomerModel);
+
+    if(this.CustomerModels.find(x=>x.CustomerCode==this.CustomerModel.CustomerCode)){
+      console.log("Edit");
+    }
+    else{
+      this.CustomerModels.push(this.CustomerModel);
+    }
     
     this.CustomerModel=new Customer(); //Clear the UI data
     console.log(this.CustomerModels);
 
+  }
+  EditCusomer(input){
+    this.CustomerModel=input;
   }
 }
