@@ -1,0 +1,21 @@
+
+
+<!--Property Binding-->
+<img [src]="imgurl" height="100" width="100"/>
+
+<!--event Binding-->
+<button (click)="show('Sample')" >Click Me</button>
+
+<input type="text" #box1 placeholder="Keyup box" (keyup)="printdata(box1.value)" />
+
+
+<input type="text" #box2 placeholder="Keydown box" (keydown)="printdata(box2.value)" />
+
+<input type="text" #box3 placeholder="Input box" (input)="printdata(box3.value)" />
+
+<br/>
+<!--Get Data withoput using any model or binding-->
+<h1>Get Input from box</h1>
+<input type="text" #box4 placeholder="Enter Name" (keyup)="getValue(box4.name)" name="usename" />
+Box value is :
+{{displayval}}
