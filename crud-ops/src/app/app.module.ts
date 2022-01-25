@@ -6,12 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerComponent } from './customer/customer.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { HomeComponent } from './home/home.component';
+import { MasterComponent } from './home/master.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CustomerComponent,
-    SupplierComponent
+    SupplierComponent,
+    MasterComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +22,6 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [MasterComponent]
 })
 export class AppModule { }
