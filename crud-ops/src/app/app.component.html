@@ -1,8 +1,16 @@
-<label>Customer Name:-</label><input [(ngModel)]="CustomerModel.CustomerName" type="text"> <br />
-Customer Code-<input [(ngModel)]="CustomerModel.CustomerCode" type="text"><br />
-Customer Amount:-<input [(ngModel)]="CustomerModel.CustomerAmount" type="text"><br />
-<button (click)="AddCustomer()">Add Customer</button>
+<form [formGroup]="CustomerModel.formCustomerGroup">
 
+  <label>Customer Name:-</label><input formControlName="CustomerNameControl" [(ngModel)]="CustomerModel.CustomerName"
+    type="text"> <br />
+  Customer Code-<input [(ngModel)]="CustomerModel.CustomerCode" type="text" [ngModelOptions]="{standalone: true}"><br />
+  Customer Amount:-<input [(ngModel)]="CustomerModel.CustomerAmount" type="text"
+    [ngModelOptions]="{standalone: true}"><br />
+  <button (click)="AddCustomer()" [disabled]=!(CustomerModel.formCustomerGroup.valid)>Add Customer</button>
+
+  <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.dirty" [hidden]="!(hasErrorinView('required','CustomerNameControl'))">
+    Customer Name is required
+    </div>
+</form>
 <!-- {{CustomerModel.CustomerName}}
 {{CustomerModel.CustomerCode}}
 {{CustomerModel.CustomerAmount}} -->

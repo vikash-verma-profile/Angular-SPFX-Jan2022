@@ -27,4 +27,8 @@ export class AppComponent {
   EditCusomer(input){
     this.CustomerModel=input;
   }
+
+  hasErrorinView(typeofvalidator:string,controlname:string):boolean{
+ return this.CustomerModel.formCustomerGroup.controls[controlname].hasError(typeofvalidator);
+  }
 }
