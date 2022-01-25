@@ -3,6 +3,8 @@ import { SupplierComponent } from './supplier.component';
 import { CommonModule } from '@angular/common';
 import { SupplierRoutes } from '../Routing/routing.supplierrouting';
 import { RouterModule } from '@angular/router';
+import { GridComponent } from '../Utility/Utility.GridComponent';
+import { GridModule } from '../Utility/Utility.GridModule';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(SupplierRoutes)
+    RouterModule.forChild(SupplierRoutes),
+    GridModule
   ],
   providers: [],
   bootstrap: [SupplierComponent]
