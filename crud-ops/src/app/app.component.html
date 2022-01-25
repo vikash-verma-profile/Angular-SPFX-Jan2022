@@ -7,15 +7,16 @@
     [ngModelOptions]="{standalone: true}"><br />
   <button (click)="AddCustomer()" [disabled]=!(CustomerModel.formCustomerGroup.valid)>Add Customer</button>
 
-  <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.dirty" [hidden]="!(hasErrorinView('required','CustomerNameControl'))">
+  <!-- fied is invalid && (isDirty || touched) -->  
+  <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.controls['CustomerNameControl'].invalid && (CustomerModel.formCustomerGroup.controls['CustomerNameControl'].dirty || CustomerModel.formCustomerGroup.controls['CustomerNameControl'].touched)" [hidden]="!(hasErrorinView('required','CustomerNameControl'))">
     Customer Name is required
     </div>
     <br/>
-    <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.dirty" [hidden]="!(hasErrorinView('required','CustomerCodeControl'))">
+    <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.controls['CustomerCodeControl'].invalid && (CustomerModel.formCustomerGroup.controls['CustomerCodeControl'].dirty || CustomerModel.formCustomerGroup.controls['CustomerCodeControl'].touched)" [hidden]="!(hasErrorinView('required','CustomerCodeControl'))">
       Customer Code is required
       </div>
       <br/>
-      <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.dirty" [hidden]="!(hasErrorinView('pattern','CustomerCodeControl'))">
+      <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.controls['CustomerCodeControl'].invalid && (CustomerModel.formCustomerGroup.controls['CustomerCodeControl'].dirty || CustomerModel.formCustomerGroup.controls['CustomerCodeControl'].touched)" [hidden]="!(hasErrorinView('pattern','CustomerCodeControl'))">
         Customer Code format is not proper
         </div>
         <br/>
