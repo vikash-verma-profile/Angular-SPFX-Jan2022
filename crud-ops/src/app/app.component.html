@@ -2,7 +2,7 @@
 
   <label>Customer Name:-</label><input formControlName="CustomerNameControl" [(ngModel)]="CustomerModel.CustomerName"
     type="text"> <br />
-  Customer Code-<input [(ngModel)]="CustomerModel.CustomerCode" type="text" [ngModelOptions]="{standalone: true}"><br />
+  Customer Code-<input formControlName="CustomerCodeControl" [(ngModel)]="CustomerModel.CustomerCode" type="text" ><br />
   Customer Amount:-<input [(ngModel)]="CustomerModel.CustomerAmount" type="text"
     [ngModelOptions]="{standalone: true}"><br />
   <button (click)="AddCustomer()" [disabled]=!(CustomerModel.formCustomerGroup.valid)>Add Customer</button>
@@ -10,6 +10,15 @@
   <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.dirty" [hidden]="!(hasErrorinView('required','CustomerNameControl'))">
     Customer Name is required
     </div>
+    <br/>
+    <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.dirty" [hidden]="!(hasErrorinView('required','CustomerCodeControl'))">
+      Customer Code is required
+      </div>
+      <br/>
+      <div style="color: red;" *ngIf="CustomerModel.formCustomerGroup.dirty" [hidden]="!(hasErrorinView('pattern','CustomerCodeControl'))">
+        Customer Code format is not proper
+        </div>
+        <br/>
 </form>
 <!-- {{CustomerModel.CustomerName}}
 {{CustomerModel.CustomerCode}}
