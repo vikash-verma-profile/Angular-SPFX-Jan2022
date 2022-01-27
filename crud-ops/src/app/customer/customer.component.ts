@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Injector } from '@angular/core';
+import { BaseLogger } from '../Utility/Utility.Logger';
 import { Customer } from './customer.model';
 
 @Component({
@@ -7,7 +8,11 @@ import { Customer } from './customer.model';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor() { }
+  LogObj:BaseLogger=null;
+  constructor(_injector:Injector) { 
+    this.LogObj=_injector.get("2");
+    this.LogObj.Log();
+  }
 
   ngOnInit() {
   }
