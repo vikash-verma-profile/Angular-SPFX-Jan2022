@@ -1,3 +1,12 @@
-<p>
-  events works!
-</p>
+<table border="1">
+  <tr>
+    <td>event name</td>
+    <td>event description</td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let event of events">
+    <td>{{event.name}}</td>
+    <td>{{event.description}}</td>
+    <td><button>Buy Tickets</button></td>
+  </tr>
+</table>
