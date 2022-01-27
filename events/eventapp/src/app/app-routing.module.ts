@@ -3,12 +3,19 @@ import { Routes, RouterModule } from "@angular/router";
 import { EventsComponent } from "./events/events.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
+import { AuthService } from "./services/auth.service";
+import { SpecialEventsComponent } from "./special-events/special-events.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/events",pathMatch:"full"},
   {
     path: "events",
     component: EventsComponent,
+  },
+  {
+    path:'special',
+    canActivate:[AuthService],
+    component:SpecialEventsComponent
   },
   {
     path: "login",
