@@ -10,6 +10,7 @@ import { Posts } from './app.model';
 export class AppComponent {
   title = 'http-call';
   PostModels:Array<Posts>=new Array<Posts>();
+  PostModel:Posts=new Posts();
 
   //constructor
   constructor(public http:HttpClient){
@@ -23,5 +24,16 @@ export class AppComponent {
   }
   Error(res){
     console.log(res);
+  }
+  SendData(){
+    console.log("Hi");
+    var json:any={};
+    json.title="Test";
+    this.http.post("https://my-json-server.typicode.com/typicode/demo/posts",json).subscribe(res=>
+    this.SuccessPost(res),res=> Error(res)
+  );
+  }
+  SuccessPost(res){
+    this.PostModel=res;
   }
 }
