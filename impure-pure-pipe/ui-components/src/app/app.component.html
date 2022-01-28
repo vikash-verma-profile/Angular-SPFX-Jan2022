@@ -1,0 +1,15 @@
+<div *ngIf="SayHello" class="sample">
+  Hello
+</div>
+
+
+<ng-template [ngIf]="SayHello">
+  <div >
+    I am coming from Template
+    </div>
+</ng-template>
+
+<ng-container *ngFor="let item of items">
+  <div >{{item.name}}</div> 
+  <div >{{item.age}}</div> 
+  </ng-container>
