@@ -17,12 +17,15 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(){
-    this._auth.registerUser(this.registerUser).subscribe((res)=>{
-      localStorage.setItem('token',res.token);
-      this._router.navigate(['events']);
-    },
-    (err)=>console.log(err)
-    );
+    console.log("Hi");
+    console.log(this.registerUser);
+
+    // this._auth.registerUser(this.registerUser).subscribe((res)=>{
+    //   localStorage.setItem('token',res.token);
+    //   this._router.navigate(['events']);
+    // },
+    // (err)=>console.log(err)
+    // );
   }
 
 }

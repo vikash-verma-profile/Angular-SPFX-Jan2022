@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { EventsComponent } from "./events/events.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
+import { AuthGaurd } from "./services/auth.gaurd";
 import { AuthService } from "./services/auth.service";
 import { SpecialEventsComponent } from "./special-events/special-events.component";
 
@@ -14,7 +15,7 @@ const routes: Routes = [
   },
   {
     path:'special',
-    canActivate:[AuthService],
+    canActivate:[AuthGaurd],
     component:SpecialEventsComponent
   },
   {

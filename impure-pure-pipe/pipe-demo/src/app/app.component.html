@@ -1,0 +1,9 @@
+<input type="text" [(ngModel)]="searchItem"  placeholder="serach name">
+<button (click)="changeProperty()">Change Property</button>
+<button (click)="changeReference()">change Refrence</button>
+
+<hr/>
+<ul>
+  <li *ngFor="let user of users | filter:searchItem">{{user.name}}</li>
+
+</ul>
