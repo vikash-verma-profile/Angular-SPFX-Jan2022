@@ -1,0 +1,14 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.11.0",
+    "libraryName": "demox-spfx",
+    "libraryId": "9af1a1b1-0f78-43e0-a4ff-88e12a75f9e5",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "demox-spfx",
+    "framework": "none",
+    "isCreatingSolution": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

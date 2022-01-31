@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "hj-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/hj/HjWebPart.js",
+          "manifest": "./src/webparts/hj/HjWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HjWebPartStrings": "lib/webparts/hj/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "@pnp/generator-spfx": {
+    "framework": "none",
+    "pnpFramework": "angularelements",
+    "pnp-libraries": [
+      "@pnp/spfx-property-controls"
+    ],
+    "pnp-vetting": [
+      "webpack-analyzer"
+    ]
+  },
+  "@microsoft/generator-sharepoint": {
+    "solutionName": "hj-spfx",
+    "framework": "none",
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "whichFolder": "subdir"
+  }
+}

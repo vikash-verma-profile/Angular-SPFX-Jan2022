@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "hj-spfx-client-side-solution",
+    "id": "91bb2f8f-aa96-447d-8e4b-caa3985ba406",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/hj-spfx.sppkg"
+  }
+}
